@@ -1,0 +1,68 @@
+.doctor-profile {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.profile-avatar {
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.speciality {
+  font-weight: bold;
+  color: #6a1b9a;
+  margin-bottom: 15px;
+}
+
+.profile-actions {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-btn,
+.book-btn {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.contact-btn {
+  background: #388e3c;
+}
+
+.book-btn {
+  background: #1976d2;
+}
+
+.contact-btn:hover {
+  background: #2e7d32;
+}
+
+.book-btn:hover {
+  background: #0d47a1;
+}
+
+.back-link {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #1976d2;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
