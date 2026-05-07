@@ -16,6 +16,9 @@ The system analyzes symptoms using a trained machine learning model and provides
 - Backend API integration
 - Recommendation system
 - Responsive frontend
+- Dashboard and analytics pages
+- Doctor recommendation flow
+- Appointment related pages
 
 ---
 
@@ -36,6 +39,10 @@ The system analyzes symptoms using a trained machine learning model and provides
 - Scikit-learn
 - Pandas
 - NumPy
+- Pickle
+
+### Database
+- MongoDB
 
 ---
 
@@ -68,15 +75,73 @@ Disease_prediction/
 
 ---
 
+## 📸 Screenshots
+
+### Home Page
+![Home Page](assets/home_page.png)
+
+### Predictors Page
+![Predictors Page](assets/predictors.png)
+
+### Doctors Page
+![Doctors Page](assets/doctors_page.png)
+
+### Dashboard
+![Dashboard](assets/dashboard.png)
+
+### Appointments Page
+![Appointments](assets/appointments.png)
+
+---
+
+## 🔧 Setup Instructions
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+### ML Service
+
+```bash
+cd ml_service
+python app.py
+```
+
+---
+
+## 📌 Notes
+
+- Make sure MongoDB is running before starting backend services.
+- Run frontend, backend, and ML service together for complete functionality.
+- Ensure required Python packages are installed before running ML service.
+
+---
+
 ## 🔮 Future Improvements
 
 - More accurate prediction models
 - Doctor consultation integration
 - User authentication
 - Medical history tracking
+- Online deployment
+- Real-time analytics dashboard
 
 ---
 
 ## 👨‍💻 Author
 
-Sourabh Saharan
+### Sourabh Saharan
+
+GitHub: https://github.com/SourabhSaharan
