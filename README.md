@@ -54,9 +54,15 @@ The system analyzes symptoms using a trained machine learning model and provides
 ```bash
 Disease_prediction/
 │
-├── frontend/
 ├── backend/
+├── frontend/
 ├── ml_service/
+├── assets/
+│   ├── appointments.png
+│   ├── dashboard.png
+│   ├── doctors_page.png
+│   ├── home_page.png
+│   └── predictors.png
 └── README.md
 ```
 
