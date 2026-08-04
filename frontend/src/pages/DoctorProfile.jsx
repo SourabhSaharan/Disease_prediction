@@ -24,7 +24,7 @@ function DoctorProfile() {
   useEffect(() => {
     const fetchDoctor = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:5000/api/doctors`);
+        const res = await axios.get("https://disease-backend-hn48.onrender.com/api/doctors");
         const found = res.data.find((doc) => String(doc.id) === id);
         setDoctor(found);
       } catch (err) {
