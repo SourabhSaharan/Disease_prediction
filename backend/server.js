@@ -9,10 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // ✅ Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/medware", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB connected"))
   .catch(err => console.error("❌ MongoDB connection error:", err));
 
