@@ -24,10 +24,29 @@ app.post("/api/predict", async (req, res) => {
     console.log("✅ Flask response:", response.data);
 
     res.json(response.data); // send prediction back to frontend
-  } catch (err) {
-    console.error("❌ Prediction error:", err.message);
-    res.status(500).json({ error: "Prediction service failed" });
+  }catch (err) {
+  console.error("========== ERROR ==========");
+  console.error("Message:", err.message);
+
+  if (err.response) {
+    console.error("Status:", err.response.status);
+    console.error("Data:", err.response.data);
   }
+
+  if (err.request) {
+    console.error("Request:", err.request);
+  }
+
+  console.error(err);
+
+  res.status(500).json({
+    error: err.message
+  });
+}
+  //catch (err) {
+   // console.error("❌ Prediction error:", err.message);
+   // res.status(500).json({ error: "Prediction service failed" });
+ // }
 });
 
 // ✅ Doctors route (static demo data for now)
