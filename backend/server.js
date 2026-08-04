@@ -73,7 +73,7 @@ app.post("/api/predict", async (req, res) => {
    // console.error("❌ Prediction error:", err.message);
    // res.status(500).json({ error: "Prediction service failed" });
  // }
-});
+//});
 
 // ✅ Doctors route (static demo data for now)
 app.get("/api/doctors", (req, res) => {
