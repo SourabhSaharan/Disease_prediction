@@ -96,7 +96,7 @@ app.get("/api/appointments", async (req, res) => {
 });
 
 // ✅ Start backend
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`✅ Backend running on http://127.0.0.1:${PORT}`));
 
 
