@@ -31,7 +31,7 @@ function Doctors() {
 
   const fetchDoctors = async (search = "") => {
     try {
-      const res = await axios.get(`http://127.0.0.1:5000/api/doctors?q=${search}`);
+      const res = await axios.get("https://disease-backend-hn48.onrender.com/api/doctors?q=${search}");
       setDoctors(res.data);
     } catch (err) {
       console.error(err);
