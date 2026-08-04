@@ -19,30 +19,56 @@ app.get("/", (req, res) => res.send("Backend is running ✅"));
 // ✅ Prediction route → calls Flask ML service (port 5001)
 app.post("/api/predict", async (req, res) => {
   try {
-    console.log("👉 Forwarding symptoms to Flask:", req.body);
-    const response = await axios.post("https://disease-ml-service.onrender.com/predict", req.body);
-    console.log("✅ Flask response:", response.data);
+    console.log("👉 Forwarding symptoms:", req.body);
 
-    res.json(response.data); // send prediction back to frontend
-  }catch (err) {
-  console.error("========== ERROR ==========");
-  console.error("Message:", err.message);
+    const response = await axios.post(
+      "https://disease-ml-service.onrender.com/predict",
+      req.body
+    );
 
-  if (err.response) {
-    console.error("Status:", err.response.status);
-    console.error("Data:", err.response.data);
+    console.log("✅ Flask returned:", response.data);
+
+    return res.json(response.data);
+
+  } catch (err) {
+
+    console.log("========== AXIOS ERROR ==========");
+
+    console.log("Message:", err.message);
+    console.log("Status:", err.response?.status);
+    console.log("Data:", err.response?.data);
+
+    return res.status(err.response?.status || 500).json(
+      err.response?.data || { error: err.message }
+    );
   }
+});
+// app.post("/api/predict", async (req, res) => {
+//   try {
+//     console.log("👉 Forwarding symptoms to Flask:", req.body);
+//     const response = await axios.post("https://disease-ml-service.onrender.com/predict", req.body);
+//     console.log("✅ Flask response:", response.data);
 
-  if (err.request) {
-    console.error("Request:", err.request);
-  }
+//     res.json(response.data); // send prediction back to frontend
+//   }catch (err) {
+//   console.error("========== ERROR ==========");
+//   console.error("Message:", err.message);
 
-  console.error(err);
+//   if (err.response) {
+//     console.error("Status:", err.response.status);
+//     console.error("Data:", err.response.data);
+//   }
 
-  res.status(500).json({
-    error: err.message
-  });
-}
+//   if (err.request) {
+//     console.error("Request:", err.request);
+//   }
+
+//   console.error(err);
+
+//   res.status(500).json({
+//     error: err.message
+//   });
+// }
   //catch (err) {
    // console.error("❌ Prediction error:", err.message);
    // res.status(500).json({ error: "Prediction service failed" });
