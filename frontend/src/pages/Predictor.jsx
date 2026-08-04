@@ -26,7 +26,7 @@ function Predictor() {
         return;
       }
 
-      const res = await axios.post("http://127.0.0.1:5000/api/predict", {
+      const res = await axios.post("https://disease-backend-hn48.onrender.com/api/predict", {
         symptoms: symptomsArray,
       });
 
