@@ -23,7 +23,7 @@ app.get("/", (req, res) => res.send("Backend is running ✅"));
 app.post("/api/predict", async (req, res) => {
   try {
     console.log("👉 Forwarding symptoms to Flask:", req.body);
-    const response = await axios.post("http://127.0.0.1:5001/predict", req.body);
+    const response = await axios.post("https://disease-ml-service.onrender.com/predict", req.body);
     console.log("✅ Flask response:", response.data);
 
     res.json(response.data); // send prediction back to frontend
