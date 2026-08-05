@@ -11,7 +11,7 @@ function Appointments() {
 
   const fetchAppointments = async () => {
     try {
-      const res = await axios.get('https://disease-backend-hn48.onrender.com/api/appointments');
+      const res = await axios.get(`https://disease-backend-hn48.onrender.com/api/appointments`);
       setAppointments(res.data);
     } catch (err) {
       console.error("Error fetching appointments:", err);
